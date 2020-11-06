@@ -1,0 +1,12 @@
+package classpart;
+
+public class StudentTest {
+
+	public static void main(String[] args) {
+		Student studentAnn= new Student();
+		studentAnn.studentName="¾È½Â¿¬";
+		System.out.println(studentAnn.studentName);
+		
+	}
+
+}

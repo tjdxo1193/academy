@@ -1,0 +1,91 @@
+package com.demo.test;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.GroupLayout;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComponent;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import com.demo.gui.TestjigWindow;
+public class TestjigWindowCheck extends JFrame{
+private JFrame mainFrame;
+private JLabel headerLabel;
+private JLabel statusLabel;
+private JPanel controlPanel;
+public TestjigWindowCheck() {
+    initUI();
+}
+private void initUI() {
+    mainFrame = new JFrame("Fuse Test jig");
+    mainFrame.setSize(400,400);
+    mainFrame.setLayout(new GridLayout(3, 1));
+    headerLabel = new JLabel("", JLabel.CENTER);        
+    statusLabel = new JLabel("",JLabel.CENTER);    
+    statusLabel.setSize(500,500);
+    controlPanel = new JPanel();
+    controlPanel.setLayout(new FlowLayout());
+    mainFrame.add(headerLabel);
+    mainFrame.add(controlPanel);
+    mainFrame.add(statusLabel);
+    mainFrame.setVisible(true);  
+}
+public void showEventDemo(){
+    //TestjigWindow frame1 = new TestjigWindow();
+    headerLabel.setText("Fuse Test Jig"); 
+    headerLabel.setFont(new Font( "Arial", Font.BOLD, 25));
+    headerLabel.setBackground(Color.green);
+    JButton startButton = new JButton("Start");
+    startButton.setActionCommand("Start");
+    JButton closeButton = new JButton("Close");
+    closeButton.setActionCommand("close");
+    startButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            // TODO Auto-generated method stub
+            try
+            {
+             if(e.getSource() == startButton)
+             {
+              TestjigWindow2 frame2 = new TestjigWindow2();
+              frame2.setVisible(true);
+              dispose();
+             } 
+             else if(e.getSource() == closeButton)
+             {
+                 System.exit(0);
+             }
+            }
+            catch (Exception ex)
+            {
+                ex.printStackTrace();
+            }
+        }
+    });
+   closeButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            // TODO Auto-generated method stub
+            try
+            {
+              System.exit(0);
+            }
+            catch (Exception ex)
+            {
+                ex.printStackTrace();
+            }
+        }
+    });
+    controlPanel.add(startButton);
+    controlPanel.add(closeButton);
+    mainFrame.setVisible(true);  
+ }
+public static void main(String[] args) {
+    TestjigWindowCheck test = new TestjigWindowCheck();
+    test.showEventDemo();
+    //test.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+     }
+ } 
+ 

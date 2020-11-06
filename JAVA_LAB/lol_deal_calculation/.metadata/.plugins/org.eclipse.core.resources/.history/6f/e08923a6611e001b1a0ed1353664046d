@@ -1,0 +1,92 @@
+package LDTcode;
+
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+
+public class Monitor{
+	private Image screenImage;
+	private Graphics screenGraphic;
+	private JFrame frame;
+	private Image introBackground;
+	
+	BufferedImage img = null;
+	
+	class myPanel extends JPanel {
+		public void paint (Graphics g) {
+			g.drawImage(img, 0, 0, null);
+		}
+	}
+	public Monitor() {
+		
+		frame.setTitle("LDT Program");
+		frame.setSize(LolDevelopmentTest.SCREEN_WIDTH, LolDevelopmentTest.SCREEN_HEIGHT);
+		frame.setResizable(false);
+		frame.setLocationRelativeTo(null);
+		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		frame.setVisible(true);
+		
+		introBackground = new ImageIcon(LolDevelopmentTest.class.getResource("../images/introBackground.jpg")).getImage();
+		
+		JPanel StartPage = new JPanel();
+		StartPage.setBounds(0, 0, 1264, 681);
+		frame.getContentPane().add(StartPage);
+		StartPage.setLayout(null);
+		try {
+			img = ImageIO.read(new File("D:\\JAVA_LAB\\introBackground.jpg"));
+		} catch(IOException e) {
+			JOptionPane.showMessageDialog(null, "이미지 불러오기 실패");
+			System.exit(0);
+		}
+		myPanel panel = new myPanel();
+		panel.setSize(1280,720);
+		StartPage.add(panel);
+		
+		JButton PlayButton = new JButton("Play");
+		PlayButton.setFont(new Font("Comic Sans MS", Font.BOLD | Font.ITALIC, 64));
+		PlayButton.setBounds(456, 350, 349, 104);
+		StartPage.add(PlayButton);
+		
+		JButton ExitButton = new JButton("Exit");
+		ExitButton.setFont(new Font("Comic Sans MS", Font.BOLD | Font.ITALIC, 64));
+		ExitButton.setBounds(456, 505, 353, 104);
+		StartPage.add(ExitButton);
+		
+		JLabel LDCTITLE = new JLabel("LOL Deal Calculation");
+		LDCTITLE.setFont(new Font("Cambria", Font.BOLD | Font.ITALIC, 72));
+		LDCTITLE.setHorizontalAlignment(SwingConstants.CENTER);
+		LDCTITLE.setBounds(236, 178, 799, 103);
+		StartPage.add(LDCTITLE);
+		
+		JPanel SettingPage = new JPanel();
+		SettingPage.setBounds(0, 0, 1264, 681);
+		frame.getContentPane().add(SettingPage);
+		SettingPage.setLayout(null);
+		
+	}
+	
+	public void paint(Graphics g) {
+		screenImage = frame.createImage(LolDevelopmentTest.SCREEN_WIDTH, LolDevelopmentTest.SCREEN_HEIGHT);
+		screenGraphic = screenImage.getGraphics();
+		screenDraw(screenGraphic);
+		g.drawImage(screenImage, 0, 0, null);
+	}
+	
+	public void screenDraw(Graphics g) {
+		g.drawImage(introBackground, 0, 0, null);
+		this.frame.repaint();
+	}
+}

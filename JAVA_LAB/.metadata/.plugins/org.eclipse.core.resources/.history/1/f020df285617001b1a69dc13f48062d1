@@ -1,0 +1,12 @@
+package chapter2;
+
+public class BasicLoop {
+
+	public static void main(String[] args) {
+		int num=1;
+		//num=num+2; num+=2; 와 같음.
+		num+=2;
+		System.out.println("1부터 10까지의 합은 "+num+"입니다.");
+	}
+
+}

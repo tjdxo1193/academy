@@ -1,0 +1,102 @@
+package test;
+
+public class Sum {
+
+	public static void main(String[] args) {
+		//NUM+NUM+NUM...NUM개
+		int SUM = 0;
+		int NUM =7;
+		for(int i = 0; i < NUM; i++) {
+			SUM += NUM;
+		}
+		System.out.println(SUM);
+		
+		
+		//1+2+3+4+....NUM
+		SUM = 0;
+		NUM = 10;
+		for(int i= 1; i <= NUM ; i++) {
+			SUM += i;
+		}
+		System.out.println(SUM);
+		
+		
+		//1+3+5+7+....NUM
+		SUM = 0;
+		NUM = 10;
+		for(int i= 1; i <= NUM ; i++) {
+			SUM += i+2;
+			//i++
+		}
+		System.out.println(SUM);
+		
+		float SUMf =0; //1/2 + 1/3 + ....1/num
+		NUM = 10;
+		for(float i1= 2; i1 <= NUM ; i1++) {
+			SUMf += 1/i1;
+		}
+		System.out.println(SUMf);
+		
+		float SUMt = 0;
+		NUM = 10;
+		for(float i2= 2; i2 <= NUM ; i2++) {
+			SUMt += (i2-1)/i2;
+		}
+		System.out.println(SUMt);
+		//6
+		SUM = 0;
+		NUM = 5;
+		for(int i= 0; i <= NUM ; i++) {
+			if(i==0)
+				SUM +=2;
+			else if(i==1)
+				SUM += 1;
+			else
+				SUM += (i-2) + i;
+		}
+		System.out.println(SUM);
+		
+		SUM = 0;
+		NUM = 5;
+		for(int i= 0; i <= NUM ; i++) {
+			if(i==0)
+				SUM +=SUM + 2;
+			else if(i==1)
+				SUM += SUM +3;
+			else
+				SUM += SUM + (i-2) + i;
+		}
+		System.out.println(SUM);
+		
+			/*  6) Sum=2+3+5+8+12+17+?...+NUM 항까지의 합  (a1(2)+0)+(a2(2)+1)+(a3(3)+2)+(a4(5)+3)+(a5(8)+4)
+				7) Sum=1+2+4+7+11+16?...+NUM 항까지의 합		(a1(1)+0)+(a2(2)+0)+(a3(3)+1)+(a4(4)+3)+(a5(5)+6)+(a6(6)+10)
+				8) Sum=1+3+6+10+?...+NUM 항까지의 합		(a1(0)+1)+(a2(1)+2)+(a3(3)+3)+(a4(6)+4)+(a5(10)+5)
+				8) Sum=1+(1+2)+(1+2+3)+(1+2+3+4)+?...+(1+2+3+4+ +NUM) 항까지의 합
+				8-1) Sum=0+1+3+6+10+?...+NUM 항까지의 합
+				9) Sum=1+1+2+3+5+8+13+?...+NUM 항까지의 합
+				10)Sum=1!+2!+3!+...+NUM! 항까지의 합
+				11)Sum= (1)+(1*2)+(1*2*3)+(1*2*3*4)...+(1*2*3*4*...*NUM)
+				12)Sum= (1*10)+(2*9)+(3*8)+...+(10*1)
+				13) Sum=1-2+3-4+...+NUM 항까지의 합
+				13-2) Sum=-1+2-3+4+...+NUM 항까지의 합
+				14) Sum=2-3+5-8+12-...+NUM 항까지의 합*/
+		//MUL = 1x2x3x4x5x6...NUM
+		int MUL = 1;
+		NUM = 10;
+		for(int i= 1; i <= NUM ; i++) {
+			MUL *= i;
+		}
+		System.out.println(MUL);
+		
+		//
+		int[] ten =  new int[] {1, 10, 2500, 44, 140};
+		NUM = 5;
+		for(int i= 0; i < NUM ; i++) {
+			System.out.println(Integer.toBinaryString(ten[i]));
+		}
+		
+		
+		
+	}
+
+}

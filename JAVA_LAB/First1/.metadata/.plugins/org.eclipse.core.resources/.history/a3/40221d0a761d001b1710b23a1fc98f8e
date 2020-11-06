@@ -1,0 +1,17 @@
+import java.util.Random;
+
+public class test {
+	
+	public static void main(String args[]) {
+		
+		int RandomNum;
+		int i;
+		
+		 Random random = new Random(); 
+		 random.setSeed(System.currentTimeMillis());
+		for(i = 0; i<7; i++) {
+			RandomNum = random.nextInt(45);
+			System.out.println(RandomNum + " ");
+		}
+	}
+}

@@ -1,0 +1,50 @@
+import java.util.Random;
+
+public class test {
+	
+	// insert sort »ğÀÔ Á¤·Ä ·Î¶Ç ³­¼ö ÇÔ¼ö O(nÁ¦°ö)
+	public static void main(String args[]) {
+		
+		int RandomNum[] = new int[7];
+		int i, j;
+		
+		Random random = new Random();
+		random.setSeed(System.currentTimeMillis());
+
+		
+		for (i = 0; i < 7; i++) {
+			RandomNum[i] = random.nextInt(45)+1;
+			for(j=0; j < i; j++) {
+				if(RandomNum[i] == RandomNum[j])
+					i--;
+			}
+		}//nÁ¦°ö±Ù
+		
+		for (i = 0; i <= 6; i++) {
+			System.out.println("[" + RandomNum[i] + "]");
+		}//n
+		
+		for (i=1; i<7; i++) {
+			int key= RandomNum[i], j1 = i-1;
+			while((j1 >= 0 )&& (key < RandomNum[j1])) {
+				swap(RandomNum[j1], RandomNum[j1+1]);
+				j1--;
+			}//nÁ¦°ö±Ù
+			RandomNum[j1+1] = key;
+		}
+		
+		
+		for (i = 0; i <= 6; i++) {
+			System.out.println("[" + RandomNum[i] + "]");
+		}//n
+		
+		//ÃÑ 2nÁ¦°ö + n
+	}
+
+	public static void swap(int a, int b) {
+			a = a + b;
+			b = a - b;
+			a = a - b;
+		}
+		
+}

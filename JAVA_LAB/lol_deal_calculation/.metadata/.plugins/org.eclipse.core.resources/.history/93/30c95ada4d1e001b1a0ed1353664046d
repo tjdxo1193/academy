@@ -1,0 +1,56 @@
+package LDTcode;
+
+import java.awt.Graphics;
+import java.awt.Image;
+import java.io.File;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JButton;
+
+public class Monitor extends JFrame{
+	private Image screenImage;
+	private Graphics screenGraphic;
+	
+	private Image introBackground;
+	
+	public Monitor() {
+		
+		setTitle("LDT Program");
+		setSize(LolDevelopmentTest.SCREEN_WIDTH, LolDevelopmentTest.SCREEN_HEIGHT);
+		setResizable(false);
+		setLocationRelativeTo(null);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		getContentPane().setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(0, 0, 1264, 681);
+		getContentPane().add(panel);
+		panel.setLayout(null);
+		
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.setBounds(464, 448, 374, 82);
+		panel.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("New button");
+		btnNewButton_1.setBounds(464, 346, 376, 82);
+		panel.add(btnNewButton_1);
+		setVisible(true);
+		
+		introBackground = new ImageIcon(LolDevelopmentTest.class.getResource("../images/introBackground.jpg")).getImage();
+		
+	}
+	
+	public void paint(Graphics g) {
+		screenImage = createImage(LolDevelopmentTest.SCREEN_WIDTH, LolDevelopmentTest.SCREEN_HEIGHT);
+		screenGraphic = screenImage.getGraphics();
+		screenDraw(screenGraphic);
+		g.drawImage(screenImage, 0, 0, null);
+	}
+	
+	public void screenDraw(Graphics g) {
+		g.drawImage(introBackground, 0, 0, null);
+		this.repaint();
+	}
+}

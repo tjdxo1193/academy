@@ -1,0 +1,18 @@
+package chapter2;
+
+public class WhileEx1 {
+
+	public static void main(String[] args) {
+		int num=1;
+		int sum =0;
+		
+		while(num<=10) {
+			sum=sum+num;
+			sum+=num;//1,3
+			num++;//2,3
+		//	System.out.println("1부터10까지의 합은 "+sum+"입니다."); 전체가 하나씩 나옴.
+		}
+			System.out.println("1부터10까지의 합은 "+sum+"입니다.");
+	}
+
+}

@@ -1,0 +1,15 @@
+package test;
+
+public class Sum {
+
+	public static void main(String[] args) {
+		int SUM = 0;
+		int NUM =8;
+		for(int i = 0; i < NUM; i++) {
+			SUM += NUM;
+		}
+		System.out.println(SUM);
+
+	}
+
+}

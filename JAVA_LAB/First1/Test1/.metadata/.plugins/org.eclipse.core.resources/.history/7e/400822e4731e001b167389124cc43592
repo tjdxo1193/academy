@@ -1,0 +1,58 @@
+package frametest;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import javax.swing.*;
+public class TestjigWindow2 extends JFrame{
+private JFrame mainFrame;
+private JLabel headerLabel;
+private JLabel statusLabel;
+private JPanel controlPanel;
+private JPanel controlPanel1;
+public TestjigWindow2()
+{
+    prepareGUI();
+}
+public static void main(String args[])
+{
+    TestjigWindow2 test = new TestjigWindow2();
+    test.showRadioButton();
+}
+private void prepareGUI()
+{
+    mainFrame = new JFrame("Fuse Test2 jig");
+    mainFrame.setSize(400,400);
+    mainFrame.setLayout(new GridLayout(3, 1));
+    headerLabel = new JLabel("", JLabel.CENTER);        
+    statusLabel = new JLabel("",JLabel.CENTER);    
+    statusLabel.setSize(500,500);
+    controlPanel = new JPanel();
+    controlPanel.setLayout(new FlowLayout());
+    mainFrame.add(headerLabel);
+    mainFrame.add(controlPanel);
+    mainFrame.add(statusLabel);
+    mainFrame.setVisible(true);
+}
+public void showRadioButton()
+{
+    headerLabel.setText("Fuse Mode"); 
+    final JRadioButton setting =new JRadioButton("Setting");    
+    final JRadioButton testing =new JRadioButton("Testing");
+    setting.setBounds(75,50,100,30);    
+    testing.setBounds(75,100,100,30);
+    setting.setMnemonic(KeyEvent.VK_S);
+    testing.setMnemonic(KeyEvent.VK_T);
+    ButtonGroup group = new ButtonGroup();
+    group.add(setting);
+    group.add(testing);
+    controlPanel.add(setting);
+    controlPanel.add(testing);
+    JButton button = new JButton("Next");
+    button.setActionCommand("Next");
+    controlPanel.add(button);
+    mainFrame.setVisible(true);  
+ }
+}
+ 

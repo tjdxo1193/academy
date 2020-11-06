@@ -1,0 +1,334 @@
+생성자 (constructor)
+생성자 기본 문법
+<modifiers><class_name>([<argument_list>])
+{
+
+생성자는 인스턴스를 초기화할때
+
+
+생성자 오버로드(constructor overload)
+- 필요에 의해 생성자 추가하는 경우 
+  여러개의 생성자가 하나의 클래스에 있음(overload)
+
+디폴트생성자(default constructor)
+- 하나의 클래스에는 반드시 적어도 하나 이상의 
+   Constructor가 존재
+- 프로그래머가 Constructor를 기술하지 않으면
+   Default Constructor가 자동으로 생김
+   (컴파일러가 코드에 넣어줌)
+  Default Constructor 매개변수가 없음
+  Default Constructor 구현부가 없음
+- 만약 클래스에 매개변수가 있는 
+  생성자를 추가하면 디폴트생성자는 제공되지 않음
+
+참조 자료형(reference data type)
+- 변수의자료형
+   1 기본자료형(int.long...등)
+   2 참조자료형(String,Date....등)
+클래스 형으로 선언하는 자료형
+
+정보은닉(information hiding)
+- private 접근제어자
+- 클래스의 외부에서 클래스 내부의 맴버 변수나 
+- 메서드에 접근(access)하지 못하게 하는 경우 사용
+- 멤버변수나 메서드를 외부에 사용하지 못하도록하여 
+  오류를 줄일수 있음.
+- 변수에 대해서는 필요한 경우get(),set() 메서드를 제공
+
+this 가 하는 일
+- 자신의 메모리를 가리킴
+- 생성자에서 다른 생성자를 호출
+- 자신의 주소를 반환함
+
+객체 간의 협력
+- 학생이 버스나 지하철을 가는 상황을 객체지향으로 
+   프로그래밍
+
+static 변수
+- 여러개의 인스턴스가 같은 메모리의 값을 
+  공유하기 위해 사용
+- static 변수는 인스턴스가 생성될때마다 다른메모리를 
+가지는 것이아니라 프로그램이 메모리에 적재
+
+
+
+파일은 데이터의 중복을 허락한다.
+파일은 종속을 허락한다.
+결합도 커플링 - 서로다른 객체의 연관성
+
+DB랑 파일의 차이점
+DB는 통합을 합니다.
+공동의 장소에 저장함
+저장된 것을 운영, 공유를 허락, 최소화하면서
+ISOS
+
+기억공간 내에서 한번씩 데이터를 가져와서 처리하는 단위
+
+
+멀티 플렉스와 디멀티플렉스 **
+
+지수부 가수부
+
+리터럴: 모든 값
+
+남궁자바
+
+형중 가장 큰 거 문자열, 문자열 하나 있으면 그 쪽으로 자동 형변환 
+
+
+package test;
+
+public class Sum {
+
+	public static void main(String[] args) {
+		// 1)NUM+NUM+NUM...NUM개
+		int SUM = 0;
+		int NUM = 7;
+		for (int i = 0; i < NUM; i++) {
+			SUM += NUM;
+		}
+		System.out.println(SUM);
+		
+		// 2)1+2+3+4+....NUM
+		SUM = 0;
+		NUM = 10;
+		for (int i = 1; i <= NUM; i++) {
+			SUM += i;
+		}
+		System.out.println(SUM);
+
+		// 3)1+3+5+7+....NUM
+		SUM = 0;
+		NUM = 10;
+		for (int i = 1; i <= NUM; i++) {
+			SUM += i;
+			i++;
+		}
+		System.out.println(SUM);
+
+		float SUMf = 0; // 4)1/2 + 1/3 + ....1/num
+		NUM = 10;
+		for (float i1 = 2; i1 <= NUM; i1++) {
+			SUMf += 1 / i1;
+		}
+		System.out.println(SUMf);
+
+		float SUMt = 0;// 5)
+		NUM = 10;
+		for (float i2 = 2; i2 <= NUM; i2++) {
+			SUMt += (i2 - 1) / i2;
+		}
+		System.out.println(SUMt);
+		// 6) Sum=2+3+5+8+12+17+?...+NUM 항까지의 합
+
+		int SUM6 = 0;
+
+		int num6 = 10;
+
+		for (int i = 1; i <= num6; i++) {
+
+			SUM6 += sum6(i);
+
+		}
+
+		System.out.println(SUM6);
+
+		// 7) Sum=1+2+4+7+?...+NUM 항까지의 합
+
+		int SUM7 = 0;
+
+		int num7 = 10;
+
+		for (int i = 1; i <= num7; i++) {
+
+			SUM7 += sum7(i);
+
+		}
+
+		System.out.println(SUM7);
+
+		//// 8) Sum=1+3+6+10+?...+NUM 항까지의 합
+
+		int SUM8 = 0;
+
+		int num8 = 10;
+
+		for (int i = 1; i <= num8; i++) {
+
+			SUM8 += sum8(i);
+
+		}
+
+		System.out.println(SUM8);
+
+		// 9) Sum=1+(1+2)+(1+2+3)+(1+2+3+4)+?...+(1+2+3+4+ +NUM) 항까지의 합
+
+		int SUM9 = 0;
+
+		int temp9 = 0;
+
+		int num9 = 10;
+
+		for (int i = 1; i <= num9; i++) {
+
+			for (int j = 1; j <= i; j++) {
+
+				temp9 += j;
+
+			}
+
+			SUM9 += temp9;
+			temp9 = 0;
+
+		}
+
+		System.out.println(SUM9);
+
+		// 10) Sum=0+1+3+6+10+?...+NUM 항까지의 합
+
+		int SUM8_1 = 0;
+
+		int num8_1 = 10;
+
+		for (int i = 1; i <= num8_1; i++) {
+
+			SUM8_1 += sum8_1(i);
+
+		}
+
+		System.out.println(SUM8_1);
+
+		// 11) Sum=1+1+2+3+5+8+13+?...+NUM 항까지의 합
+		
+		int SUM11 = 0;
+		int num11 = 10;
+		for (int i = 1; i <= num11; i ++) {
+			SUM11 += sum11(i);
+		
+		}
+		
+		System.out.println(SUM11);
+		
+		
+
+		// 12)Sum=1!+2!+3!+...+NUM! 항까지의 합
+		int MUL = 1;
+		int SUM3 = 0;
+		NUM = 10;
+		for (int i = 1; i <= NUM; i++) {
+			for (int j = 1; j <= i; j++) {
+				MUL = MUL * j;
+			}
+			SUM3 += MUL;
+			MUL = 1;
+		}
+		System.out.println(SUM3);
+
+		// 13)Sum= (1*10)+(2*9)+(3*8)+...+(10*1)
+		int SUM13 = 0;
+		int num13 = 10;
+		for (int i = 1; i <= num13; i ++) {
+			SUM13 += i*(num13-i+1);
+		
+		}
+		
+		System.out.println(SUM13);
+		
+		// 14) Sum=2-3+5-8+12-...+NUM 항까지의 합
+		
+		int SUM14 = 0;
+		int num14 = 10;
+		for (int i = 1; i <= num14; i ++) {
+			if(i%2==0)
+				SUM14 -= sum6(i);
+			else
+				SUM14 += sum6(i);
+		}
+		
+		System.out.println(SUM14);
+		
+		
+		
+		
+		// 15) Sum=1-2+3-4+...+NUM 항까지의 합
+		SUM = 0;
+		NUM = 10;
+		for (int i = 0; i <= NUM; i++) {
+			if (i % 2 == 0)
+				SUM += i;
+			else
+				SUM += -i;
+		}
+		System.out.println(SUM);
+		
+		
+		// 16) Sum=-1+2-3+4+...+NUM 항까지의 합
+		SUM = 0;
+		NUM = 10;
+		for (int i = 0; i <= NUM; i++) {
+			if (i % 2 == 0)
+				SUM += -i;
+			else
+				SUM += +i;
+		}
+		System.out.println(SUM);
+
+		int[] ten = new int[] { 1, 10, 2500, 44, 140 };
+		NUM = 5;
+		for (int i = 0; i < NUM; i++) {
+			System.out.println(Integer.toBinaryString(ten[i]));
+		}
+
+	}
+
+	public static int sum11(int NUM) {
+		if(NUM==1 || NUM ==0)
+			return 1;
+		
+		return sum11(NUM-1) + sum11(NUM-2);
+	}
+
+	public static int sum8_1(int NUM) {
+		if (NUM == 1)
+			return 0;
+		else
+			return sum8_1(NUM - 1) + NUM;
+	}
+
+	public static int sum6(int NUM) {
+
+		if (NUM == 1)
+
+			return 2;
+
+		else
+
+			return sum6(NUM - 1) + (NUM - 1);
+
+	}
+
+	public static int sum7(int NUM) {
+
+		if (NUM == 1)
+
+			return 1;
+
+		else
+
+			return sum7(NUM - 1) + (NUM - 1);
+
+	}
+
+	public static int sum8(int NUM) {
+
+		if (NUM == 1)
+
+			return 1;
+
+		else
+
+			return sum8(NUM - 1) + NUM;
+
+	}
+
+}

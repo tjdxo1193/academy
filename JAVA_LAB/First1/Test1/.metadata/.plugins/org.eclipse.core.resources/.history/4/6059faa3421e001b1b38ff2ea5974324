@@ -1,0 +1,70 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JButton;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+
+public class Monitor {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Monitor window = new Monitor();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Monitor() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setSize(1280, 720);
+		frame.setVisible(true);
+		frame.setResizable(false);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JPanel StartPage = new JPanel();
+		StartPage.setBounds(0, 0, 1264, 681);
+		frame.getContentPane().add(StartPage);
+		StartPage.setLayout(null);
+		
+		JButton PlayButton = new JButton("Play");
+		PlayButton.setFont(new Font("Comic Sans MS", Font.BOLD | Font.ITALIC, 64));
+		PlayButton.setBounds(456, 350, 349, 104);
+		StartPage.add(PlayButton);
+		
+		JButton ExitButton = new JButton("Exit");
+		ExitButton.setFont(new Font("Comic Sans MS", Font.BOLD | Font.ITALIC, 64));
+		ExitButton.setBounds(456, 505, 353, 104);
+		StartPage.add(ExitButton);
+		
+		JLabel LDCTITLE = new JLabel("LOL Deal Calculation");
+		LDCTITLE.setFont(new Font("Cambria", Font.BOLD | Font.ITALIC, 72));
+		LDCTITLE.setHorizontalAlignment(SwingConstants.CENTER);
+		LDCTITLE.setBounds(236, 178, 799, 103);
+		StartPage.add(LDCTITLE);
+	}
+}

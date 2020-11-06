@@ -1,0 +1,22 @@
+package test;
+
+public class Sum {
+
+	public static void main(String[] args) {
+		int SUM = 0;
+		int NUM =8;
+		for(int i = 0; i < NUM; i++) {
+			SUM += NUM;
+		}
+		System.out.println(SUM);
+		
+		SUM = 0;
+		NUM = 10;
+		for(int i= 1; i < NUM ; i++) {
+			SUM += i;
+		}
+		System.out.println(SUM);
+		
+	}
+
+}

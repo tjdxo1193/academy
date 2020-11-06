@@ -1,0 +1,92 @@
+package LDTcode;
+
+import LDTcode.Champ.ChampPool;
+	
+	public class ChampPool {
+		public String Name;
+		public int AD;
+		public int AP;
+		public int MP;
+		public int HP;
+		
+		public ChampPool(String name, int ad, int ap, int mp, int hp) {
+			setName(name);
+			setAD(ad);
+			setAP(ap);
+			setMP(mp);
+			setHP(hp);
+		}
+
+		public int getAD() {
+			return this.AD;
+		}
+
+		public int getAP() {
+			return this.AP;
+		}
+
+		public int getMP() {
+			return this.MP;
+		}
+
+		public int getHP() {
+			return this.HP;
+		}
+
+		public String getName() {
+			return this.Name;
+		}
+
+		public void setAD(int ad) {
+			this.AD = ad;
+		}
+
+		public void setAP(int ap) {
+			this.AP = ap;
+		}
+
+		public void setMP(int mp) {
+			this.MP = mp;
+		}
+
+		public void setHP(int hp) {
+			this.HP = hp;
+		}
+
+		public void setName(String name) {
+			this.Name = name;
+		}
+		
+		public void print() {
+			System.out.println("챔피언 이름 : " + this.Name);
+			System.out.println("AD : " + this.AD);
+			System.out.println("AP : " + this.AP);
+			System.out.println("HP : " + this.HP);
+			System.out.println("MP : " + this.MP);
+		}
+		
+		public void setChampPool(ChampPool arg[]) {
+			
+			int[] MP_POOL = new int[] {400, 0, 300, 400, 450, 500, 480, 440, 510, 420};
+			int[] HP_POOL = new int[] {560, 600, 650, 530, 570, 520, 610, 660, 700, 510};
+			int[] AD_POOL = new int[] {70, 75, 81, 55, 50, 70, 55, 55, 50, 55};
+			int[] AP_POOL = new int[] {0, 0, 0, 0, 40, 0, 30, 40, 50, 45};
+			String[] NAME_POOL = new String[] {"가렌", "야스오", "트리스타나", "알리스타", "애니", "마이", "럭스", "초가스", "피즈", "아리"};
+			
+			for( int i = 0 ; i < 10 ; i ++ )
+			{
+				arg[i].AD = AD_POOL[i];
+				arg[i].AP = AP_POOL[i];
+				arg[i].HP = HP_POOL[i];
+				arg[i].MP = MP_POOL[i];
+				arg[i].Name = NAME_POOL[i];
+				arg[i].print();
+			}
+		}
+		
+
+	}
+}
+}
+
+

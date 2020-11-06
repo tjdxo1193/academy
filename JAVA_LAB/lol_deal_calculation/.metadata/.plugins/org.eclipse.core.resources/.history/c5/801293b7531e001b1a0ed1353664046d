@@ -1,0 +1,76 @@
+package LDTcode;
+
+public class Champ {
+	int AP; //AbilityPower
+	int AD; //AttackDamage
+	int HP; //HealthPoint
+
+	public class ChampPool {
+		public String Name;
+		public int AD;
+		public int AP;
+		public int MP;
+		public int HP;
+
+		public int getAD() {
+			return this.AD;
+		}
+
+		public int getAP() {
+			return this.AP;
+		}
+
+		public int getMP() {
+			return this.MP;
+		}
+
+		public int getHP() {
+			return this.HP;
+		}
+
+		public String getName() {
+			return this.Name;
+		}
+
+		public void setAD(int ad) {
+			this.AD = ad;
+		}
+
+		public void setap(int ap) {
+			this.AP = ap;
+		}
+
+		public void setMP(int mp) {
+			this.MP = mp;
+		}
+
+		public void setHP(int hp) {
+			this.HP = hp;
+		}
+
+		public void setName(String name) {
+			this.Name = name;
+		}
+		
+		public void print() {
+			System.out.println("Ã¨ÇÇ¾ð ÀÌ¸§ : " + this.Name);
+			System.out.println("AD : " + this.AD);
+			System.out.println("AP : " + this.AP);
+			System.out.println("HP : " + this.HP);
+			System.out.println("MP : " + this.MP);
+		}
+
+		public ChampPool(String name, int ad, int ap, int mp, int hp) {
+			this.Name = name;
+			this.AD = ad;
+			this.AP = ap;
+			this.MP = mp;
+			this.HP = hp;
+		}
+
+
+
+			
+	}
+}
+

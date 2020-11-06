@@ -1,0 +1,11 @@
+package constructor;
+
+public class Person {
+	String name;
+	float height;
+	float weight;
+	
+	public person(String person) {
+		name=person;
+	}
+}

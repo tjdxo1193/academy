@@ -1,0 +1,19 @@
+package LDTcode;
+
+import java.io.File;
+
+public class LolDevelopmentTest {
+
+	public static final int SCREEN_WIDTH = 1280;
+	public static final int SCREEN_HEIGHT = 720;
+	
+	public static void main(String[] args) {
+		File Clap =new File("LDT/src/music/introMusic.mp3");
+
+		Music.PlaySound(Clap);
+
+
+		new Monitor();
+	}
+
+}

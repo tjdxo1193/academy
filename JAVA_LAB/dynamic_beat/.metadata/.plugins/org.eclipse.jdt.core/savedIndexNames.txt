@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+D:\JAVA_LAB\dynamic_beat\.metadata\.plugins\org.eclipse.jdt.core
+2601805529.index
+3460880079.index

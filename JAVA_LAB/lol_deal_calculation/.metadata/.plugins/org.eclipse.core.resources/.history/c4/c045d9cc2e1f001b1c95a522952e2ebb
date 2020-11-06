@@ -1,0 +1,164 @@
+package LDTcode;
+
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+
+import com.sun.tools.javac.Main;
+
+import javax.swing.ImageIcon;
+import javax.swing.JComboBox;
+
+public class Monitor  {
+
+	
+	JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Monitor window = new Monitor();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Monitor() {
+		initialize();
+	}
+	BufferedImage img = null;
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	
+	class myPanel extends JPanel {
+		public void paint (Graphics g) {
+			g.drawImage(img, 0, 0, null);
+		}
+	}
+	private void initialize() {
+		frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("D:\\JAVA_LAB\\introBackground.jpg"));
+		frame.setBounds(100, 100, 450, 300);
+		frame.setSize(1280, 720);
+		frame.setVisible(true);
+		frame.setResizable(false);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JPanel SettingPage = new JPanel();
+		SettingPage.setBounds(0, 0, 1264, 681);
+		frame.getContentPane().add(SettingPage);
+		SettingPage.setLayout(null);
+		//SettingPage.setVisible(false);
+		
+		
+		JButton BackButton = new JButton("");
+		BackButton.setIcon(new ImageIcon("D:\\JAVA_LAB\\Back.png"));
+		BackButton.setBounds(439, 490, 336, 165);
+		SettingPage.add(BackButton);
+		
+		JComboBox MyChampPick = new JComboBox();
+		MyChampPick.setBounds(775, 194, 230, 33);
+		SettingPage.add(MyChampPick);
+		
+		JComboBox OtherChampPick = new JComboBox();
+		OtherChampPick.setBounds(210, 189, 231, 33);
+		SettingPage.add(OtherChampPick);
+		BackButton.setVisible(false);
+		OtherChampPick.addItem("가렌");
+		OtherChampPick.addItem("야스오");
+		OtherChampPick.addItem("트리스타나");
+		OtherChampPick.addItem("알리스타");
+		OtherChampPick.addItem("애니");
+		OtherChampPick.addItem("마이");
+		OtherChampPick.addItem("럭스");
+		OtherChampPick.addItem("초가스");
+		OtherChampPick.addItem("피즈");
+		OtherChampPick.addItem("아리");
+		
+		
+		JPanel StartPage = new JPanel();
+		StartPage.setBounds(0, 0, 1264, 681);
+		frame.getContentPane().add(StartPage);
+		StartPage.setLayout(null);
+		
+		JLabel LDCTITLE = new JLabel("LOL Deal Calculation");
+		LDCTITLE.setFont(new Font("Cambria", Font.BOLD | Font.ITALIC, 72));
+		LDCTITLE.setHorizontalAlignment(SwingConstants.CENTER);
+		LDCTITLE.setBounds(236, 178, 799, 103);
+		StartPage.add(LDCTITLE);
+		
+		
+		myPanel panel = new myPanel();
+		panel.setSize(1280,720);
+		StartPage.add(panel);
+		
+		JButton PlayButton = new JButton("");
+		PlayButton.setIcon(new ImageIcon("D:\\JAVA_LAB\\Start.png"));
+		PlayButton.setFont(new Font("Comic Sans MS", Font.BOLD | Font.ITALIC, 64));
+		PlayButton.setBounds(474, 350, 321, 104);
+		StartPage.add(PlayButton);
+		
+		JButton ExitButton = new JButton("");
+		ExitButton.setIcon(new ImageIcon("D:\\JAVA_LAB\\Exit1.png"));
+		ExitButton.setFont(new Font("Comic Sans MS", Font.BOLD | Font.ITALIC, 64));
+		ExitButton.setBounds(474, 476, 321, 122);
+		StartPage.add(ExitButton);
+		
+		try {
+			img = ImageIO.read(new File("D:\\JAVA_LAB\\introBackground.jpg"));
+		} catch(IOException e) {
+			JOptionPane.showMessageDialog(null, "이미지 불러오기 실패");
+			System.exit(0);
+		}
+		
+		PlayButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				SettingPage.setVisible(true);
+				StartPage.setVisible(false);
+				BackButton.setVisible(true);
+			}
+			
+		});
+		
+		BackButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				StartPage.setVisible(true);
+				SettingPage.setVisible(false);
+				BackButton.setVisible(false);
+				
+			}
+			
+		});
+		
+	}
+}

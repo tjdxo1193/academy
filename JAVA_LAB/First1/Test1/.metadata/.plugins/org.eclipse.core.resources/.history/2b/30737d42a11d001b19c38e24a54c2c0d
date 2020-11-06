@@ -1,0 +1,9 @@
+package frametest;
+
+public class problem {
+ 
+	public static void main(String arg[]) {
+		ChampPool EXE = new ChampPool(null, , 0, 0, 0);
+		EXE.setting_imformation();
+	}
+}

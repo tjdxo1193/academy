@@ -1,0 +1,30 @@
+import java.util.Random;
+
+public class test {
+	
+	public static void main(String args[]) {
+		
+		int RandomNum[] = {0,0,0,0,0,0,0};
+		int i,j;
+		
+		 Random random = new Random(); 
+		 random.setSeed(System.currentTimeMillis());
+		for(i = 0; i<=6; i++) {
+			RandomNum[i] = random.nextInt(45);
+			for(j= 0; j<=5; j++) {
+				
+				int a = RandomNum[i];
+				int b = RandomNum[i+1];
+				if((a>b)&&(b!=0)) {
+					RandomNum[i] = b ;
+					RandomNum[i+1] = a;
+				}
+				else 
+					continue;
+				}
+			}
+		for(i = 0; i<=6; i++) {
+			System.out.println(RandomNum + ",");
+		}
+		}
+	}

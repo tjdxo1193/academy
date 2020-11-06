@@ -1,0 +1,11 @@
+
+public class test {
+	
+	public static void main(String args[]) {
+		int TotalDamage;
+		String ChampArray[][] = {{"가렌", "650"},{"마이", "550"},{"애니","540"},{"미스포춘","520"},{"블리츠크랭크","600"}}; //업데이트 필요
+		int score[] = {1};
+		
+		System.out.println(score[1]);
+	}
+}

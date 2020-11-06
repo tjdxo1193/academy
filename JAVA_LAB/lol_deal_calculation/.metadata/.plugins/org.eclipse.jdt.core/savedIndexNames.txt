@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+D:\JAVA_LAB\lol_deal_calculation\.metadata\.plugins\org.eclipse.jdt.core
+3460880079.index
+554435662.index

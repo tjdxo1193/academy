@@ -1,0 +1,44 @@
+package LDTcode;
+
+import java.awt.Graphics;
+import java.awt.Image;
+import java.io.File;
+import java.net.URISyntaxException;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+
+public class Monitor extends JFrame{
+	private Image screenImage;
+	private Graphics screenGraphic;
+	
+	private Image introBackground;
+	private File Clap;
+	
+	public Monitor() {
+		
+		setTitle("LDT Program");
+		setSize(LolDevelopmentTest.SCREEN_WIDTH, LolDevelopmentTest.SCREEN_HEIGHT);
+		setResizable(false);
+		setLocationRelativeTo(null);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setVisible(true);
+		
+		introBackground = new ImageIcon(LolDevelopmentTest.class.getResource("../images/introBackground.jpg")).getImage();
+		
+		
+		Music.PlaySound(Clap);
+	}
+	
+	public void paint(Graphics g) {
+		screenImage = createImage(LolDevelopmentTest.SCREEN_WIDTH, LolDevelopmentTest.SCREEN_HEIGHT);
+		screenGraphic = screenImage.getGraphics();
+		screenDraw(screenGraphic);
+		g.drawImage(screenImage, 0, 0, null);
+	}
+	
+	public void screenDraw(Graphics g) {
+		g.drawImage(introBackground, 0, 0, null);
+		this.repaint();
+	}
+}

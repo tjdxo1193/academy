@@ -1,0 +1,27 @@
+package classpart1;
+
+public class Student {
+	String studentName;
+	
+	public String getStudentName() {
+		return studentName;
+	}
+	public static void main(String[] args) {
+		Student studentAhn=new Student();
+		studentAhn.studentName="안연수";
+		
+		Student student1=new Student();
+		student1.studentName="홍길동";
+		
+		System.out.println(student1.studentName);
+		
+		Student student2=new Student();
+		student2.studentName="이순신";
+		
+		System.out.println(student2.studentName);
+		
+		System.out.println(studentAhn.studentName);
+		System.out.println(studentAhn.getStudentName());
+	}
+
+}

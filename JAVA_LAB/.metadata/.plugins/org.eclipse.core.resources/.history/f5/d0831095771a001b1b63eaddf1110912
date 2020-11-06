@@ -1,0 +1,12 @@
+package thisex;
+
+public class Person {
+	String name;
+	int age;
+	
+	public static void main(String[] args) {
+		Person noName=new Person();
+		System.out.println(noName);
+	}
+
+}

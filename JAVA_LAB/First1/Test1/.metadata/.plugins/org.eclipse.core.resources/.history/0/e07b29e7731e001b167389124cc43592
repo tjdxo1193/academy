@@ -1,0 +1,23 @@
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
+class JPane01 extends JPanel {
+	private JButton jButton1;
+	private JScrollPane jScrollPane1;
+	private JTextArea jTextArea1;
+	private JPanelTest win;
+	
+	public JPanel01 (JPanelTest win) {
+		this.win = win;
+		setLayout(null);
+		
+		jButton1 = new JButton("¹öÆ°");
+		jButton1.setSize(70,20);
+		jButton1.setLocation(10, 10);
+		add(jButton1);
+		
+		
+	}
+}

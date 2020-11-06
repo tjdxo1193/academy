@@ -1,0 +1,23 @@
+package classpart;
+
+public class Student {
+	int studentID;
+	String studentName;
+	int grade;
+	String address;
+	
+	//public void showStudntInfo() {
+		//System.out.println(studentName+", "+address);
+	//}
+	public String getStudentName() {
+		return studentName;
+	}
+	public static void main(String[] args) {
+		Student studentAnn= new Student();
+		studentAnn.studentName="¾È¿¬¼ö";
+		
+		System.out.println(studentAnn.studentName);
+		System.out.println(studentAnn.getstudentName());
+	}
+}
+

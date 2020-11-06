@@ -1,0 +1,9 @@
+
+public class Champ {
+	int AP; //AbilityPower
+	int AD; //AttackDamage
+	int HP; //HealthPoint
+	
+	
+	
+}
